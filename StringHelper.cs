@@ -6,25 +6,31 @@ namespace PadawansTask4
     {
         public static int GetVowelCount(string str)
         {
-            if ( str == "")
+            if (str == null)
             {
                 throw new ArgumentNullException();
             }
-            char[] strArray = str.ToCharArray();
-            char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-            int count = 0;
-            for (int i = 0; i < strArray.Length; i++)
+            else if(str == "")
             {
-                for( int j = 0; j < vowels.Length; j++)
+                throw new ArgumentException();
+            }
+            else
+            {
+                char[] strArray = str.ToCharArray();
+                char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+                int count = 0;
+                for (int i = 0; i < strArray.Length; i++)
                 {
-                    if( strArray[i] == vowels[j])
+                    for (int j = 0; j < vowels.Length; j++)
                     {
-                        count++;
+                        if (strArray[i] == vowels[j])
+                        {
+                            count++;
+                        }
                     }
                 }
+                return count;
             }
-            return count;
-
         }
     }
 }
