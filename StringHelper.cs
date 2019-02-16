@@ -6,7 +6,7 @@ namespace PadawansTask4
     {
         public static int GetVowelCount(string str)
         {
-            if ( str.Length == 0)
+            if ( str == "")
             {
                 throw new ArgumentNullException();
             }
